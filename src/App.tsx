@@ -5,7 +5,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import ShareIcon from '@mui/icons-material/Share';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import './app.css';
-import { Link, useParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 const baseQuote =
 {
@@ -52,7 +52,9 @@ const lightTheme = createTheme({
 
 
 function App() {
-  let { id } = useParams();
+  let [searchParams] = useSearchParams();
+  let id = searchParams.get("q");
+  console.log(id)
 
   const [darkMode, setDarkMode] = React.useState(true);
   const [quote, setQuote] = React.useState(baseQuote);
@@ -61,27 +63,27 @@ function App() {
   const darkIcon = <DarkModeIcon color="primary" />
   const lightIcon = <LightModeIcon color="primary" />
 
+  const refresh = () => {
+    const index = Math.floor(Math.random() * quotes.length)
+    setQuote(quotes[index])
+  }
+
   useEffect(() => {
     const getQuotes = async () => {
       const serverData = await fetchArticles()
-      setLoaded(true)
       setQuotes(serverData)
-      console.log(id)
-      if (id === undefined || id == null) {
-        const index = Math.floor(Math.random() * quotes.length)
-        setQuote(quotes[index])
-      }
+      setLoaded(true)
+      const index = Math.floor(Math.random() * serverData.length)
+      setQuote(serverData[index])
       if (id && loaded) {
-        console.log(serverData)
         const q = serverData.find((q: any) => q.id == id)
-        console.log(q)
         if (q) {
           setQuote(q)
         }
       }
     }
     getQuotes()
-  }, [])
+  }, [id, loaded])
 
   const fetchArticles = async () => {
     const res = await fetch("https://raw.githubusercontent.com/rwlodarczyk/teacher-quotes/main/mw-quotes.json")
@@ -93,13 +95,8 @@ function App() {
     setDarkMode(!darkMode);
   }
 
-  const refresh = () => {
-    const index = Math.floor(Math.random() * quotes.length)
-    setQuote(quotes[index])
-  }
-
   const share = () => {
-    navigator.clipboard.writeText("https://rwlodarczyk.github.io/" + quote.id)
+    navigator.clipboard.writeText("https://rwlodarczyk.github.io/?q=" + quote.id)
   }
 
   return (
