@@ -55,7 +55,6 @@ const lightTheme = createTheme({
 function App() {
   let [searchParams] = useSearchParams();
   let id = searchParams.get("q");
-  console.log(id)
 
   const [darkMode, setDarkMode] = React.useState(true);
   const [quote, setQuote] = React.useState(baseQuote);
@@ -66,6 +65,9 @@ function App() {
 
   const refresh = () => {
     const index = Math.floor(Math.random() * quotes.length)
+    if(quotes[index].attachment == null){
+      quotes[index].attachment = ""
+    }
     setQuote(quotes[index])
   }
 
@@ -75,6 +77,9 @@ function App() {
       setQuotes(serverData)
       setLoaded(true)
       const index = Math.floor(Math.random() * serverData.length)
+      if(serverData[index].attachment == null){
+        serverData[index].attachment = ""
+      }
       setQuote(serverData[index])
       if (id && loaded) {
         const q = serverData.find((q: any) => q.id == id)
@@ -127,6 +132,7 @@ function App() {
               <Typography variant="h6">
                 {quote.id}
               </Typography>
+              
               {(quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm"))?
               <video width="50%" height="30%" controls>
                 <source src={quote.attachment} type="video/mp4"/>
