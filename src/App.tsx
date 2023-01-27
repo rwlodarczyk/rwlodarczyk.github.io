@@ -60,7 +60,6 @@ function App() {
   const [quote, setQuote] = React.useState(baseQuote);
   const [quotes, setQuotes] = React.useState([baseQuote]);
   const [loaded, setLoaded] = React.useState(true);
-  const [attachment, setAttachment] = React.useState(false);
   const darkIcon = <DarkModeIcon color="primary" />
   const lightIcon = <LightModeIcon color="primary" />
 
@@ -72,24 +71,26 @@ function App() {
   useEffect(() => {
     const getQuotes = async () => {
       const serverData = await fetchArticles()
-      const index = Math.floor(Math.random() * serverData.length)
-      setQuote(serverData[index])
       setQuotes(serverData)
       setLoaded(true)
-      if (Object.prototype.hasOwnProperty.call(serverData[index], "attachment")) {
-        setAttachment(true);
-      } else {
-        setAttachment(false);
-      }
-      if (id && loaded) {
-        const q = serverData.find((q: any) => q.id == id)
-        if (q) {
-          setQuote(q)
-        }
-      }
     }
     getQuotes()
-  }, [id, loaded])
+  }, [])
+
+  useEffect(() => {
+    if (loaded) {
+      console.log(id)
+      const q = quotes.find((q: any) => q.id == id)
+      if (q) {
+        setQuote(q)
+        return;
+      }
+      else {
+        const index = Math.floor(Math.random() * quotes.length)
+        setQuote(quotes[index])
+      }
+    }
+  }, [quotes])
 
   const fetchArticles = async () => {
     const res = await fetch("https://raw.githubusercontent.com/rwlodarczyk/teacher-quotes/main/mw-quotes.json")
@@ -132,11 +133,11 @@ function App() {
               <Typography variant="h6">
                 {quote.id}
               </Typography>
-              {attachment ? ((quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm")) ?
+              {quote.attachment ? ((quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm")) ?
                 <video width="50%" height="30%" controls>
                   <source src={quote.attachment} type="video/mp4" />
                 </video> : "") : ""}
-              {attachment ? ((quote.attachment.endsWith(".jpg") || quote.attachment.endsWith(".png") || quote.attachment.endsWith(".gif")) ?
+              {quote.attachment ? ((quote.attachment.endsWith(".jpg") || quote.attachment.endsWith(".png") || quote.attachment.endsWith(".gif")) ?
                 <img width="50%" height="30%" alt="generated attachment" src={quote.attachment}></img> : "") : ""}
             </div>)
             : (
