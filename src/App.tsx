@@ -12,7 +12,8 @@ const baseQuote =
   id: -1,
   link: "",
   data: "19.01.1970",
-  content: ">.<"
+  content: ">.<",
+  attachment: "",
 }
 
 
@@ -126,6 +127,13 @@ function App() {
               <Typography variant="h6">
                 {quote.id}
               </Typography>
+              {(quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm"))?
+              <video width="50%" height="30%" controls>
+                <source src={quote.attachment} type="video/mp4"/>
+              </video>:""}
+              {(quote.attachment.endsWith(".jpg") || quote.attachment.endsWith(".png") || quote.attachment.endsWith(".gif"))?
+              <img width="50%" height="30%" alt="generated attachment" src={quote.attachment}></img>:""}
+
             </div>)
             : (
               <CircularProgress style={{ color: "palette.primary" }} />
