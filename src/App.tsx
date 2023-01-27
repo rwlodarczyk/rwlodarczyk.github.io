@@ -60,27 +60,27 @@ function App() {
   const [quote, setQuote] = React.useState(baseQuote);
   const [quotes, setQuotes] = React.useState([baseQuote]);
   const [loaded, setLoaded] = React.useState(true);
+  const [attachment, setAttachment] = React.useState(false);
   const darkIcon = <DarkModeIcon color="primary" />
   const lightIcon = <LightModeIcon color="primary" />
 
   const refresh = () => {
     const index = Math.floor(Math.random() * quotes.length)
-    if(quotes[index].attachment == null){
-      quotes[index].attachment = ""
-    }
     setQuote(quotes[index])
   }
 
   useEffect(() => {
     const getQuotes = async () => {
       const serverData = await fetchArticles()
+      const index = Math.floor(Math.random() * serverData.length)
+      setQuote(serverData[index])
       setQuotes(serverData)
       setLoaded(true)
-      const index = Math.floor(Math.random() * serverData.length)
-      if(serverData[index].attachment == null){
-        serverData[index].attachment = ""
+      if (Object.prototype.hasOwnProperty.call(serverData[index], "attachment")) {
+        setAttachment(true);
+      } else {
+        setAttachment(false);
       }
-      setQuote(serverData[index])
       if (id && loaded) {
         const q = serverData.find((q: any) => q.id == id)
         if (q) {
@@ -132,14 +132,12 @@ function App() {
               <Typography variant="h6">
                 {quote.id}
               </Typography>
-              
-              {(quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm"))?
-              <video width="50%" height="30%" controls>
-                <source src={quote.attachment} type="video/mp4"/>
-              </video>:""}
-              {(quote.attachment.endsWith(".jpg") || quote.attachment.endsWith(".png") || quote.attachment.endsWith(".gif"))?
-              <img width="50%" height="30%" alt="generated attachment" src={quote.attachment}></img>:""}
-
+              {attachment ? ((quote.attachment.endsWith(".mp4") || quote.attachment.endsWith(".webm")) ?
+                <video width="50%" height="30%" controls>
+                  <source src={quote.attachment} type="video/mp4" />
+                </video> : "") : ""}
+              {attachment ? ((quote.attachment.endsWith(".jpg") || quote.attachment.endsWith(".png") || quote.attachment.endsWith(".gif")) ?
+                <img width="50%" height="30%" alt="generated attachment" src={quote.attachment}></img> : "") : ""}
             </div>)
             : (
               <CircularProgress style={{ color: "palette.primary" }} />
