@@ -2,7 +2,7 @@
     "Sledge": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "AR",
             "Shotgun"
@@ -20,7 +20,7 @@
     "Thatcher": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "AR",
             "Shotgun"
@@ -37,7 +37,7 @@
     "Ash": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "AR"
         ],
@@ -54,7 +54,7 @@
     "Thermite": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "AR",
             "Shotgun"
@@ -71,7 +71,7 @@
     "Twitch": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "AR",
             "Marksman Rifle",
@@ -90,7 +90,7 @@
     "Montagne": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "None"
         ],
@@ -108,7 +108,7 @@
     "Glaz": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "primary_options": [
             "Marksman Rifle"
         ],
@@ -126,7 +126,7 @@
     "Fuze": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -142,7 +142,7 @@
     "Blitz": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Entry Fragger"
@@ -156,7 +156,7 @@
     "IQ": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Utility Clear",
@@ -171,7 +171,7 @@
     "Buck": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Soft Breach"
@@ -185,7 +185,7 @@
     "Blackbeard": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Angle Watch"
@@ -200,7 +200,7 @@
     "Capitao": {
         "sex": "Male",
         "continent": "South America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Area Denial"
@@ -214,7 +214,7 @@
     "Hibana": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Hard Breach"
@@ -228,7 +228,7 @@
     "Jackal": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Intel Gatherer",
@@ -243,7 +243,7 @@
     "Ying": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Entry Fragger"
@@ -257,7 +257,7 @@
     "Zofia": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Entry Fragger",
@@ -272,7 +272,7 @@
     "Dokkaebi": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Intel Gatherer"
@@ -287,7 +287,7 @@
     "Lion": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Intel Gatherer"
@@ -302,7 +302,7 @@
     "Finka": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Entry Fragger"
@@ -316,7 +316,7 @@
     "Maverick": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Hard Breach"
@@ -330,7 +330,7 @@
     "Nomad": {
         "sex": "Female",
         "continent": "Africa",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Angle Watch",
@@ -345,7 +345,7 @@
     "Gridlock": {
         "sex": "Female",
         "continent": "Australia",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -361,7 +361,7 @@
     "Nokk": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Entry Fragger"
@@ -376,7 +376,7 @@
     "Amaru": {
         "sex": "Female",
         "continent": "South America",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Entry Fragger"
@@ -390,7 +390,7 @@
     "Kali": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Utility Clear",
@@ -405,7 +405,7 @@
     "Iana": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "Entry Fragger",
@@ -420,7 +420,7 @@
     "Ace": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "hard Breach"
@@ -434,7 +434,7 @@
     "Zero": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "Intel Gatherer",
@@ -449,7 +449,7 @@
     "Flores": {
         "sex": "Male",
         "continent": "South America",
-        "release_year": "Y6",
+        "release_year": 6,
         "secondary_image": "",
         "role": [
             "Utility Clear",
@@ -464,7 +464,7 @@
     "Osa": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y6",
+        "release_year": 6,
         "secondary_image": "",
         "role": [
             "Angle Watch"
@@ -479,7 +479,7 @@
     "Sens": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y7",
+        "release_year": 7,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -494,7 +494,7 @@
     "Grim": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y7",
+        "release_year": 7,
         "secondary_image": "",
         "role": [
             "Intel Gatherer",
@@ -509,7 +509,7 @@
     "Brava": {
         "sex": "Female",
         "continent": "South America",
-        "release_year": "Y8",
+        "release_year": 8,
         "secondary_image": "",
         "role": [
             "Utility Clear",
@@ -524,7 +524,7 @@
     "Smoke": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Area Denial"
@@ -538,7 +538,7 @@
     "Mute": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Anti-Intel",
@@ -554,7 +554,7 @@
     "Castle": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Area Denial"
@@ -568,7 +568,7 @@
     "Pulse": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Roamer",
@@ -583,7 +583,7 @@
     "Doc": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Support"
@@ -597,7 +597,7 @@
     "Rook": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Support"
@@ -611,7 +611,7 @@
     "Kapkan": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Trapper"
@@ -625,7 +625,7 @@
     "Tachanka": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Area Denial"
@@ -636,10 +636,10 @@
             "Deployable Shield"
         ]
     },
-    "Jäger": {
+    "Jager": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Support",
@@ -654,7 +654,7 @@
     "Bandit": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Breach Denial"
@@ -668,7 +668,7 @@
     "Frost": {
         "sex": "Female",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Trapper"
@@ -682,7 +682,7 @@
     "Valkyrie": {
         "sex": "Female",
         "continent": "North America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Intel Gatherer"
@@ -696,7 +696,7 @@
     "Caveira": {
         "sex": "Female",
         "continent": "South America",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Roamer",
@@ -711,7 +711,7 @@
     "Echo": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y1",
+        "release_year": 1,
         "secondary_image": "",
         "role": [
             "Support",
@@ -726,7 +726,7 @@
     "Mira": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Support",
@@ -741,7 +741,7 @@
     "Lesion": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Trapper",
@@ -756,7 +756,7 @@
     "Ela": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Trapper",
@@ -771,7 +771,7 @@
     "Vigil": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y2",
+        "release_year": 2,
         "secondary_image": "",
         "role": [
             "Roamer",
@@ -786,7 +786,7 @@
     "Maestro": {
         "sex": "Male",
         "continent": "Europe",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Intel Gatherer"
@@ -800,7 +800,7 @@
     "Alibi": {
         "sex": "Female",
         "continent": "Africa",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Intel Gatherer",
@@ -815,7 +815,7 @@
     "Clash": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Area Denial"
@@ -829,7 +829,7 @@
     "Kaid": {
         "sex": "Male",
         "continent": "Africa",
-        "release_year": "Y3",
+        "release_year": 3,
         "secondary_image": "",
         "role": [
             "Breach Denial"
@@ -843,7 +843,7 @@
     "Mozzie": {
         "sex": "Male",
         "continent": "Australia",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Anti-Intel",
@@ -859,7 +859,7 @@
     "Warden": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Intel Gatherer"
@@ -873,7 +873,7 @@
     "Goyo": {
         "sex": "Male",
         "continent": "North America",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -888,7 +888,7 @@
     "Wamai": {
         "sex": "Male",
         "continent": "Africa",
-        "release_year": "Y4",
+        "release_year": 4,
         "secondary_image": "",
         "role": [
             "Support"
@@ -902,7 +902,7 @@
     "Oryx": {
         "sex": "Male",
         "continent": "Asia",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "Roamer"
@@ -916,7 +916,7 @@
     "Melusi": {
         "sex": "Female",
         "continent": "Africa",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -931,7 +931,7 @@
     "Aruni": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y5",
+        "release_year": 5,
         "secondary_image": "",
         "role": [
             "Area Denial",
@@ -946,7 +946,7 @@
     "Thunderbird": {
         "sex": "Female",
         "continent": "North America",
-        "release_year": "Y6",
+        "release_year": 6,
         "secondary_image": "",
         "role": [
             "Support"
@@ -960,7 +960,7 @@
     "Thorn": {
         "sex": "Female",
         "continent": "Europe",
-        "release_year": "Y6",
+        "release_year": 6,
         "secondary_image": "",
         "role": [
             "Trapper"
@@ -974,7 +974,7 @@
     "Azami": {
         "sex": "Female",
         "continent": "Asia",
-        "release_year": "Y7",
+        "release_year": 7,
         "secondary_image": "",
         "role": [
             "Support",
@@ -989,7 +989,7 @@
     "Solis": {
         "sex": "Female",
         "continent": "South America",
-        "release_year": "Y7",
+        "release_year": 7,
         "secondary_image": "",
         "role": [
             "Intel Gatherer",

@@ -1,4 +1,5 @@
 import { Typography } from "@mui/material";
+import { ArrowDropDown, ArrowDropUp } from "@mui/icons-material";
 
 type CheckParameterProps = {
   parameter: string;
@@ -8,34 +9,54 @@ type CheckParameterProps = {
 
 const CheckParameter = ({ parameter, correct, check }: CheckParameterProps) => {
   if (Array.isArray(check[parameter as keyof typeof check])) {
-    const result: { key: string; value: string }[] = [];
+    let counter = 0;
+    let color = "#d32f2f";
+
     (check[parameter as keyof typeof check] as string[]).forEach((element) => {
-      result.push({
-        key: element,
-        value: (correct[parameter] as string[]).includes(element)
-          ? "#00ff00"
-          : "#ff0000",
-      });
+      if ((correct[parameter] as string[]).includes(element)) {
+        counter++;
+      }
     });
+    if (
+      counter == (check[parameter as keyof typeof check] as string[]).length &&
+      counter == (correct[parameter] as string[]).length
+    ) {
+      color = "#2e7d32";
+    } else if (counter > 0) {
+      color = "#ff9800";
+    }
+
     return (
-      <>
-        {result.map((element) => {
-          return (
-            <Typography sx={{ color: element.value }}>{element.key}</Typography>
-          );
-        })}
-      </>
+      <Typography sx={{ color: color }}>
+        {(check[parameter as keyof typeof check] as string[]).join(", ")}
+      </Typography>
     );
   } else {
+    let lower = 0;
+    if (typeof correct[parameter] == "number") {
+      if (check[parameter as keyof typeof check] < correct[parameter]) {
+        lower = 0;
+      } else if (check[parameter as keyof typeof check] > correct[parameter]) {
+        lower = 1;
+      } else {
+        lower = -1;
+      }
+    }
     return (
-      <Typography
-        sx={{
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          flexWrap: "wrap",
           color:
-            correct[parameter] === check[parameter] ? "#00ff00" : "#ff0000",
+            correct[parameter] === check[parameter] ? "#2e7d32" : "#d32f2f",
         }}
       >
-        {check[parameter as keyof typeof check]}
-      </Typography>
+        <Typography>{check[parameter as keyof typeof check]}</Typography>
+        {typeof correct[parameter] == "number" &&
+          lower >= 0 &&
+          (lower ? <ArrowDropDown /> : <ArrowDropUp />)}
+      </div>
     );
   }
 };

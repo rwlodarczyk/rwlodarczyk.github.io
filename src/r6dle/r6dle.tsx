@@ -29,27 +29,47 @@ const R6dle = () => {
     }
   };
 
-  const guessOp = () => {
-    setSelectedOp("");
-    setCorrect(false);
-    resetInput(!input);
-    if (correct) {
-      if (selectedOp === op) {
-        setVictory(true);
+  const onReturn = (name: string) => {
+    guessOp(name);
+  };
+
+  const guessOp = (name?: string) => {
+    if (name) {
+      if (opList.includes(name)) {
+        resetInput(!input);
+        if (name === op) {
+          setVictory(true);
+        }
+        setGuesses(Array.from(new Set([...guesses, name])));
       }
-      setGuesses(Array.from(new Set([...guesses, selectedOp])));
+    } else {
+      setSelectedOp("");
+      setCorrect(false);
+      resetInput(!input);
+      if (correct) {
+        if (selectedOp === op) {
+          setVictory(true);
+        }
+        setGuesses(Array.from(new Set([...guesses, selectedOp])));
+      }
     }
   };
 
   return (
     <Box sx={{ margin: "20px", textAlign: "center" }}>
-      <BackHome/>
+      <BackHome />
       <Typography variant="h1">R6dle</Typography>
       <Typography variant="subtitle1">Guess the correct operator</Typography>
       <Box sx={{ margin: "60px" }}>
         {!victory ? (
           <>
-            <NameSelect opList={opList} onChange={onNameChange} reset={input} />
+            <NameSelect
+              opList={opList}
+              guessed={guesses}
+              onChange={onNameChange}
+              onReturn={onReturn}
+              reset={input}
+            />
             {correct && (
               <div
                 style={{
@@ -61,7 +81,7 @@ const R6dle = () => {
                 <Button
                   variant="contained"
                   sx={{ margin: "15px", width: "40%" }}
-                  onClick={guessOp}
+                  onClick={() => guessOp()}
                 >
                   <Typography>Guess</Typography>
                 </Button>
@@ -92,7 +112,11 @@ const R6dle = () => {
           </>
         )}
       </Box>
-      <Guesses guesses={guesses} correct={r6ops[op as keyof typeof r6ops]} />
+      <Guesses
+        guesses={guesses}
+        correct={r6ops[op as keyof typeof r6ops]}
+        op={op}
+      />
     </Box>
   );
 };

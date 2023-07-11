@@ -11,6 +11,7 @@ import r6ops from "./r6ops.json";
 import CheckParameter from "./checkParameter";
 
 type GuessesProps = {
+  op: string;
   correct: { [key: string]: string | string[] | number };
   guesses: string[];
 };
@@ -19,16 +20,23 @@ const Guesses = (props: GuessesProps) => {
   return (
     <TableContainer component={Paper} sx={{ width: "80%", margin: "auto" }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead sx={{ minWidth: 650, borderTop: "1px solid #6f00f7ff" }}>
+        <TableHead
+          sx={{
+            minWidth: 650,
+            borderTop: `1px solid ${
+              props.guesses.includes(props.op) ? "#2e7d32" : "#6f00f7"
+            }`,
+          }}
+        >
           <TableRow>
             <TableCell>Icon</TableCell>
             <TableCell>Operator</TableCell>
-            <TableCell align="right">Sex</TableCell>
-            <TableCell align="right">Continent</TableCell>
-            <TableCell align="right">Release Year</TableCell>
-            <TableCell align="right">Role</TableCell>
-            <TableCell align="right">Speed</TableCell>
-            <TableCell align="right">Gadgets</TableCell>
+            <TableCell>Sex</TableCell>
+            <TableCell>Continent</TableCell>
+            <TableCell>Release Year</TableCell>
+            <TableCell>Role</TableCell>
+            <TableCell>Speed</TableCell>
+            <TableCell>Gadgets</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,7 +47,10 @@ const Guesses = (props: GuessesProps) => {
               return (
                 <TableRow
                   key={guess}
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                  sx={{
+                    "&:last-child td, &:last-child th": { border: 0 },
+                    textAlign: "center",
+                  }}
                 >
                   <TableCell>
                     <img
@@ -49,42 +60,42 @@ const Guesses = (props: GuessesProps) => {
                     />
                   </TableCell>
                   <TableCell>{guess}</TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="sex"
                       correct={props.correct}
                       check={selected_op}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="continent"
                       correct={props.correct}
                       check={selected_op}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="release_year"
                       correct={props.correct}
                       check={selected_op}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="role"
                       correct={props.correct}
                       check={selected_op}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="speed"
                       correct={props.correct}
                       check={selected_op}
                     />
                   </TableCell>
-                  <TableCell align="right">
+                  <TableCell>
                     <CheckParameter
                       parameter="gadgets"
                       correct={props.correct}
