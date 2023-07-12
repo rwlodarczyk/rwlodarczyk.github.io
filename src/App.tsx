@@ -12,8 +12,12 @@ const routes = [
     path: "/quotes",
   },
   {
-    name: "Mark Generator",
+    name: "Mark generator",
     path: "/mark",
+  },
+  {
+    name: "Proof step skipper",
+    path: "/proof",
   }
 ];
 

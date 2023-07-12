@@ -3,6 +3,7 @@ import App from "./App";
 import R6dle from "./r6dle/r6dle";
 import Quotes from "./quotes/quotes";
 import MarkGenerator from "./markgen/markGenerator";
+import Proof from "./proof/proof";
 
 export const HashRoutes = createHashRouter([
   {
@@ -21,4 +22,8 @@ export const HashRoutes = createHashRouter([
     path: "/mark",
     element: <MarkGenerator />,
   },
+  {
+    path: "/proof",
+    element: <Proof/>
+  }
 ]);
