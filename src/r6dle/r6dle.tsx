@@ -4,6 +4,7 @@ import NameSelect from "./nameSelect";
 import { useState } from "react";
 import Guesses from "./guesses";
 import BackHome from "../_general/backhome";
+import React from "react";
 
 const R6dle = () => {
   const restartPage = () => {
@@ -56,7 +57,7 @@ const R6dle = () => {
   };
 
   return (
-    <Box sx={{ margin: "20px", textAlign: "center" }}>
+    <React.Fragment>
       <BackHome />
       <Typography variant="h1">R6dle</Typography>
       <Typography variant="subtitle1">Guess the correct operator</Typography>
@@ -117,7 +118,7 @@ const R6dle = () => {
         correct={r6ops[op as keyof typeof r6ops]}
         op={op}
       />
-    </Box>
+    </React.Fragment>
   );
 };
 

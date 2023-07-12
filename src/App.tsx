@@ -10,6 +10,10 @@ const routes = [
   {
     name: "Quotes",
     path: "/quotes",
+  },
+  {
+    name: "Mark Generator",
+    path: "/mark",
   }
 ];
 
