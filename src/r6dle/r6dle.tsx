@@ -1,13 +1,14 @@
+import React from "react";
 import r6ops from "./r6ops.json";
 import Guesses from "./guesses";
 import BackHome from "../_general/backhome";
 import RightData from "../_general/rightdata";
 import NameSelect from "./nameSelect";
-import { useEffect, useState } from "react";
+import Leaderboard from "./leaderboard";
 import { TokenSave } from "./API/tokenSave";
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
 import { DailyOperator } from "./API/dailyOperator";
+import { useEffect, useState } from "react";
+import { Box, Button, Typography } from "@mui/material";
 
 type R6dleLocal = {
   op: string;
@@ -111,7 +112,8 @@ const R6dle = () => {
   return (
     <React.Fragment>
       <BackHome />
-      <RightData text={["API Debug", `token:${token}`,`sha256:${dailySha}`]} />
+      <Leaderboard />
+      <RightData text={["API Debug", `token:${token}`, `sha256:${dailySha}`]} />
       <Typography variant="h1">R6dle</Typography>
       <Typography variant="subtitle1">Guess the correct operator</Typography>
       {/* {dailyOperator} */}
