@@ -1,32 +1,70 @@
-import { Box, Button, Typography } from "@mui/material";
 import r6ops from "./r6ops.json";
-import NameSelect from "./nameSelect";
-import { useState } from "react";
 import Guesses from "./guesses";
 import BackHome from "../_general/backhome";
+import RightData from "../_general/rightdata";
+import NameSelect from "./nameSelect";
+import { useEffect, useState } from "react";
+import { TokenSave } from "./API/tokenSave";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { DailyOperator } from "./API/dailyOperator";
+
+type R6dleLocal = {
+  op: string;
+  opList: string[];
+  guesses: string[];
+  victory: boolean;
+  correct: boolean;
+  selectedOp: string;
+  input: boolean;
+};
 
 const R6dle = () => {
+  const opList = Object.keys(r6ops);
+
+  const [token, setToken] = useState<string>("");
+  const [dailySha, setDailySha] = useState<string>("");
+
+  const [playDaily] = useState<boolean>(false);
+  const [dailyOperator, setDailyOperator] = useState<string>("");
+
+  useEffect(() => {
+    const getToken = async () => {
+      const tokenSave = await TokenSave();
+      setToken(tokenSave.status == "success" ? tokenSave.token : "");
+
+      const dailyOperator = await DailyOperator(
+        tokenSave.status == "success" ? tokenSave.token : ""
+      );
+      setDailyOperator(
+        dailyOperator.status == "success" ? dailyOperator.data : ""
+      );
+      setDailySha(dailyOperator.status == "success" ? dailyOperator.sha : "");
+    };
+
+    void getToken();
+  }, []);
+
+  const [localState, setLocalState] = useState<R6dleLocal>({
+    op: opList[Math.floor(Math.random() * opList.length)],
+    opList: opList,
+    guesses: [],
+    victory: false,
+    correct: false,
+    selectedOp: "",
+    input: false,
+  });
+
   const restartPage = () => {
     window.location.reload();
   };
 
-  const opList = Object.keys(r6ops);
-
-  const [op] = useState(opList[Math.floor(Math.random() * opList.length)]);
-  const [guesses, setGuesses] = useState<string[]>([]);
-  const [victory, setVictory] = useState(false);
-
-  const [correct, setCorrect] = useState(false);
-  const [selectedOp, setSelectedOp] = useState("");
-  const [input, resetInput] = useState(false);
-
   const onNameChange = (name: string) => {
     if (opList.includes(name)) {
-      setCorrect(true);
-      setSelectedOp(name);
+      setLocalState({ ...localState, correct: true, selectedOp: name });
+      guessOp(name);
     } else {
-      setCorrect(false);
+      setLocalState({ ...localState, correct: false });
     }
   };
 
@@ -34,44 +72,60 @@ const R6dle = () => {
     guessOp(name);
   };
 
+  const getCorrectOP = () => {
+    if (playDaily) {
+      return dailyOperator;
+    } else {
+      return localState.op;
+    }
+  };
+
   const guessOp = (name?: string) => {
+    const currentState = { ...localState };
     if (name) {
       if (opList.includes(name)) {
-        resetInput(!input);
-        if (name === op) {
-          setVictory(true);
+        currentState.input = !currentState.input;
+        if (name === getCorrectOP()) {
+          currentState.victory = true;
         }
-        setGuesses(Array.from(new Set([...guesses, name])));
+        currentState.guesses = Array.from(
+          new Set([...localState.guesses, name])
+        );
       }
     } else {
-      setSelectedOp("");
-      setCorrect(false);
-      resetInput(!input);
-      if (correct) {
-        if (selectedOp === op) {
-          setVictory(true);
+      currentState.selectedOp = "";
+      currentState.correct = false;
+      currentState.input = !currentState.input;
+      if (localState.correct) {
+        if (localState.selectedOp === getCorrectOP()) {
+          currentState.victory = true;
         }
-        setGuesses(Array.from(new Set([...guesses, selectedOp])));
+        currentState.guesses = Array.from(
+          new Set([...localState.guesses, localState.selectedOp])
+        );
       }
     }
+    setLocalState(currentState);
   };
 
   return (
     <React.Fragment>
       <BackHome />
+      <RightData text={["API Debug", `token:${token}`,`sha256:${dailySha}`]} />
       <Typography variant="h1">R6dle</Typography>
       <Typography variant="subtitle1">Guess the correct operator</Typography>
+      {/* {dailyOperator} */}
       <Box sx={{ margin: "60px" }}>
-        {!victory ? (
+        {!localState.victory ? (
           <>
             <NameSelect
               opList={opList}
-              guessed={guesses}
+              guessed={localState.guesses}
               onChange={onNameChange}
               onReturn={onReturn}
-              reset={input}
+              reset={localState.input}
             />
-            {correct && (
+            {localState.correct && (
               <div
                 style={{
                   position: "absolute",
@@ -92,11 +146,11 @@ const R6dle = () => {
         ) : (
           <>
             <img
-              src={`/r6opicons/${op.toLowerCase()}.svg`}
-              alt={op}
+              src={`/r6opicons/${getCorrectOP().toLowerCase()}.svg`}
+              alt={getCorrectOP()}
               width="50px"
             />
-            <Typography>{op}</Typography>
+            <Typography>{getCorrectOP()}</Typography>
             <br />
             <Typography>
               Congratulations, you've chosen the correct operator!
@@ -114,9 +168,9 @@ const R6dle = () => {
         )}
       </Box>
       <Guesses
-        guesses={guesses}
-        correct={r6ops[op as keyof typeof r6ops]}
-        op={op}
+        guesses={localState.guesses}
+        correct={r6ops[getCorrectOP() as keyof typeof r6ops]}
+        op={getCorrectOP()}
       />
     </React.Fragment>
   );

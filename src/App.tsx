@@ -18,6 +18,10 @@ const routes = [
   {
     name: "Proof step skipper",
     path: "/proof",
+  },
+  {
+    name: "Resume (polish)",
+    path: "/cv",
   }
 ];
 

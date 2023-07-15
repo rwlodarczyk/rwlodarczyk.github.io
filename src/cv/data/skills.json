@@ -1,0 +1,83 @@
+[
+    {
+        "title": "Kontakt",
+        "content": [
+            "[adress redacted]",
+            "[city redacted]",
+            "",
+            "[phone redacted]",
+            "rafal.piotr.wlodarczyk@gmail.com"
+        ]
+    },
+    {
+        "title": "Strona Autorska",
+        "content": [{
+            "type": "Link",
+            "name": "rafisto.github.io",
+            "href": "https://rafisto.github.io"
+        }]
+    },
+    {
+        "title": "Umiejętności Językowe",
+        "content": [
+            {
+                "type": "Skill",
+                "name": "Polski",
+                "level": 100
+            },
+            {
+                "type": "Skill",
+                "name": "Angielski",
+                "level": 85
+            },
+            {
+                "type": "Skill",
+                "name": "Hiszpański",
+                "level": 50
+            }
+        ]
+    },
+    {
+        "title": "Informatyka",
+        "content": [
+            {
+                "type": "Skill",
+                "name": "Python",
+                "level": 80
+            },
+            {
+                "type": "Skill",
+                "name": "Typescript",
+                "level": 70
+            },
+            {
+                "type": "Skill",
+                "name": "C",
+                "level": 50
+            },
+            {
+                "type": "Skill",
+                "name": "Git",
+                "level": 60
+            },
+            {
+                "type": "Skill",
+                "name": "LINUX",
+                "level": 70
+            },
+            {
+                "type": "Skill",
+                "name": "UX",
+                "level": 50
+            }
+        ]
+    },
+    {
+        "title": "Zainteresowania",
+        "content": [
+            "Elektronika",
+            "Gra na gitarze",
+            "Literatura piękna"
+        ]
+    }
+]

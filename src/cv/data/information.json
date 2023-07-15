@@ -1,0 +1,60 @@
+[
+    {
+        "title": "Podsumowanie",
+        "description": {
+            "content": "Wysoce zmotywowany absolwent szkoły średniej z pasją do technologii, znaczącymi wynikami w nauce z fizyki, matematyki i informatyki. Poszukuję stażu w IT, aby zdobyć praktyczne doświadczenie oraz przyczynić się do rozwoju innowacyjnych rozwiązań."
+        }
+    },
+    {
+        "title": "Edukacja",
+        "description": {
+            "title": "Szkoła średnia (2019-2023)",
+            "content": "Akademickie Liceum Ogólnokształcące Politechniki Wrocławskiej"
+        }
+    },
+    {
+        "title": "Doświadczenie",
+        "description": {
+            "title": "Prowadzący - Elektronika ALO PWr (2022-)",
+            "content": "Od roku 2022 prowadzę zajęcia z elektroniki w ALO PWr, rozwijając kompetencje elektroniczne uczestników. Cykl zajęć obejmuje programowanie mikrokontrolerów w języku C."
+        }
+    },
+    {
+        "title": "Osiągnięcia",
+        "description": [
+            {
+                "title": "Laureat Ogólnopolskiego Konkursu Studium Talent (03.2023)",
+                "content": "Uzyskując na egzaminie z Fizyki wynik 95%, otrzymałem ocenę bardzo dobrą w ogólnopolskim konkursie Studium Talent."
+            },
+            {
+                "title": "Finalista międzynarodowego konkursu Cybertron (04.2022)",
+                "content": "Konkurs typu CTF z zakresu cyberbezpieczeństwa. W edycji 2023 PWr, jako mentor współtworzyłem zadania finałowe."
+            },
+            {
+                "title": "Projekt autorskiej strony internetowej (2021-)",
+                "content": "Przy użyciu ReactJS tworzę stronę internetową, na której umieszczam: artykuły, osiągnięcia oraz całą moją twórczość artystyczną."
+            }
+        ]
+    },
+    {
+        "title": "Umiejętności",
+        "description": [
+            {
+                "title": "Certyfikat EFSET 85/100 (08.2022)",
+                "content": "Uzyskałem wynik 85/100 - C2 Proficient w EF Standard English Test"
+            },
+            {
+                "title": "Scientific Computing with Python (07.2022)",
+                "content": "Kurs analizy danych w języku Python z wykorzystaniem NumPy freeCodeCamp.org"
+            },
+            {
+                "title": "Tworzenie stron internetowych - TypeScript i ReactJS (2022-)",
+                "content": "Bieżący stan moich umiejętności ukazuje autorska strona internetowa. Posiadam doświadczenie m.in. z bibliotekami: material-ui, react-router-dom, react-query, socket-io"
+            },
+            {
+                "title": "Projektowanie układów elektronicznych",
+                "content": "Posiadam umiejętność projektowania systemów IoT w oparciu o popularne mikrokontrolery. Posługuję się systemem Linux. Rozwijam się w zakresie programowania w języku C."
+            }
+        ]
+    }
+]
