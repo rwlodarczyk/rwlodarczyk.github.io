@@ -13,6 +13,7 @@ export const DailyOperator = async (token: string) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+      referrerPolicy: 'unsafe-url'
     })
       .then((res) => res.json())
       .then((data) => {

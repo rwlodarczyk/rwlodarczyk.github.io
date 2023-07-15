@@ -1,6 +1,7 @@
 export const GenerateToken = () => {
   return fetch("http://api.r6dle.tech/token", {
     method: "GET",
+    referrerPolicy: 'unsafe-url'
   })
     .then((res) => res.json())
     .then((data) => {

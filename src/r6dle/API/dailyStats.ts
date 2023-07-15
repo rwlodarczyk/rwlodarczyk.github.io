@@ -1,5 +1,8 @@
 export const DailyStats = async () => {
-  return fetch("http://api.r6dle.tech/stats/global/")
+  return fetch("http://api.r6dle.tech/stats/global/", {
+    method: "GET",
+    referrerPolicy: "unsafe-url",
+  })
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -10,6 +13,6 @@ export const DailyStats = async () => {
     })
     .catch((error: string) => {
       console.log(error);
-      return { status: "error"};
+      return { status: "error" };
     });
 };
