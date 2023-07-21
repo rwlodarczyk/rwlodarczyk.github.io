@@ -5,6 +5,7 @@ import Quotes from "./quotes/quotes";
 import MarkGenerator from "./markgen/markGenerator";
 import Proof from "./proof/proof";
 import CurriculumVitae from "./cv/CV";
+import {TripPlanner} from "./tripplanner/TripPlanner.tsx";
 
 export const HashRoutes = createHashRouter([
   {
@@ -31,4 +32,8 @@ export const HashRoutes = createHashRouter([
     path: "/cv",
     element: <CurriculumVitae />,
   },
+  {
+    path: "/itinerary",
+    element: <TripPlanner/>
+  }
 ]);

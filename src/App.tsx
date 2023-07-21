@@ -22,6 +22,10 @@ const routes = [
   {
     name: "Resume (polish)",
     path: "/cv",
+  },
+  {
+    name: "Trip Planner",
+    path: "/itinerary"
   }
 ];
 
